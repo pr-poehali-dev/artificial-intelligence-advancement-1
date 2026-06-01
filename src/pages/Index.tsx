@@ -1,246 +1,270 @@
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check, Phone, Mail, MapPin, Shield, Zap, Award, Settings } from "lucide-react";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
         <div className="flex items-center space-x-8">
-          <div className="text-xl font-bold">НотоПлан</div>
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center">
+              <span className="text-white font-bold text-sm">В</span>
+            </div>
+            <div className="text-xl font-bold text-gray-900">НПО «Волна»</div>
+          </div>
           <nav className="hidden md:flex items-center space-x-6 text-sm text-gray-600">
-            <a href="#" className="hover:text-gray-900">
-              Начать
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Продукты
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Решения
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Сравнение
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Цены
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Вопросы
-            </a>
+            <a href="#products" className="hover:text-blue-700 transition-colors">Продукция</a>
+            <a href="#features" className="hover:text-blue-700 transition-colors">Преимущества</a>
+            <a href="#applications" className="hover:text-blue-700 transition-colors">Применение</a>
+            <a href="#about" className="hover:text-blue-700 transition-colors">О компании</a>
+            <a href="#contacts" className="hover:text-blue-700 transition-colors">Контакты</a>
           </nav>
         </div>
-        <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-6">
-          Тарифы
+        <Button className="bg-blue-700 text-white hover:bg-blue-800 rounded-full px-6">
+          Запросить КП
         </Button>
       </header>
 
       {/* Hero Section */}
       <section className="text-center px-6 py-16 max-w-4xl mx-auto">
-        {/* New Badge */}
-        <div className="inline-flex items-center bg-black text-white text-sm px-4 py-2 rounded-full mb-8">
-          <span className="bg-white text-black text-xs px-2 py-1 rounded-full mr-3">
-            Новинка
+        <div className="inline-flex items-center bg-blue-700 text-white text-sm px-4 py-2 rounded-full mb-8">
+          <span className="bg-white text-blue-700 text-xs px-2 py-1 rounded-full mr-3 font-medium">
+            ООО
           </span>
-          Ваши заметки станут великолепными.
-          <svg
-            className="w-4 h-4 ml-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
+          Поставка промышленных рукавов и трубопроводов
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </div>
 
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-          Приложение для заметок,
+          Рукава и трубопроводы
           <br />
-          работающее как{" "}
-          <span className="text-teal-500">Органайзер</span>
+          для <span className="text-blue-700">газотурбинных</span> установок
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-pretty">
-          Отличные заметки заслуживают системы, которая делает все: от списков
-          дел для организованной жизни до запуска вашего стартапа быстрее
-          конкурентов.
+          Фторопластовые рукава, металлорукава, сильфонные компенсаторы и трубопроводы
+          для газотурбинных установок. Поставка по всей России.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8 py-3">
-            <Star className="w-4 h-4 mr-2" />
-            Получить приглашение
+          <Button className="bg-blue-700 text-white hover:bg-blue-800 rounded-full px-8 py-3">
+            <Icon name="FileText" size={16} className="mr-2" />
+            Запросить коммерческое предложение
           </Button>
-          <Button
-            variant="outline"
-            className="rounded-full px-8 py-3 bg-transparent"
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              />
-            </svg>
-            Записаться на звонок
+          <Button variant="outline" className="rounded-full px-8 py-3 bg-transparent border-gray-300 hover:border-blue-700">
+            <Icon name="Phone" size={16} className="mr-2" />
+            Позвонить нам
           </Button>
         </div>
       </section>
 
-      {/* Logo Section */}
-      <section className="py-16 px-6">
+      {/* Partners / Clients Strip */}
+      <section className="py-10 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center space-x-12 opacity-60">
-            <div className="text-lg font-medium">Старт</div>
-            <div className="text-lg font-bold border-b-2 border-black pb-1">
-              Запуск
-            </div>
-            <div className="text-2xl font-bold">N</div>
-            <div className="text-lg font-bold">Итерация</div>
-            <div className="text-lg font-medium">Масштабирование</div>
+          <p className="text-center text-sm text-gray-400 mb-6">Работаем с предприятиями отрасли</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Нефтегаз</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Энергетика</div>
+            <div className="text-sm font-semibold text-gray-800 font-bold text-base uppercase tracking-wide">ГТУ</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Машиностроение</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">ВПК</div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="py-16 px-6 text-center">
+      {/* Testimonial / Quote Section */}
+      <section id="about" className="py-16 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <div className="w-16 h-16 rounded-full bg-gray-200 mx-auto mb-6 overflow-hidden">
-            <img
-              src="/professional-headshot.png"
-              alt="Отзыв"
-              className="w-full h-full object-cover"
-            />
+          <div className="w-16 h-16 rounded-full bg-blue-100 mx-auto mb-6 flex items-center justify-center">
+            <Icon name="Award" size={28} className="text-blue-700" />
           </div>
-          <h3 className="text-xl font-semibold mb-4">
-            Быстрая и простая настройка
-          </h3>
+          <h3 className="text-xl font-semibold mb-4">Надёжный поставщик специальной трубопроводной арматуры</h3>
           <p className="text-gray-600 mb-2">
-            "Мы масштабировались до тысяч заметок ежедневно. Панель управления
-            приложения — единственное, что помогает нам оставаться в здравом
-            уме."
+            «Компания НПО "Волна" специализируется на поставке высококачественных рукавов
+            и трубопроводных систем для ответственных применений в промышленности и энергетике.»
           </p>
-          <p className="text-sm text-gray-500">
-            Михаил из НотоПлан, официальный представитель
-          </p>
+          <p className="text-sm text-gray-500">ООО «НПО "Волна"» — официальный поставщик</p>
         </div>
       </section>
 
-      {/* Branding Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      {/* Products Section */}
+      <section id="products" className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm text-gray-500 mb-4">Брендинг</p>
+          <p className="text-sm text-gray-500 mb-4">Продукция</p>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Настройте весь опыт под себя
+            Наш ассортимент
           </h2>
           <p className="text-gray-600 mb-12">
-            От заметки до страницы и организованной жизни — сосредоточьтесь на
-            росте.
+            Поставляем специализированные рукава и трубопроводы для промышленных и энергетических объектов
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button variant="outline" className="rounded-full bg-transparent">
-              Магазин
-            </Button>
-            <Button variant="outline" className="rounded-full bg-transparent">
-              Оформление
-            </Button>
-            <Button className="bg-black text-white rounded-full">
-              Почта
-            </Button>
-            <Button variant="outline" className="rounded-full bg-transparent">
-              Рассылка
-            </Button>
-            <Button variant="outline" className="rounded-full bg-transparent">
-              Сканер
-            </Button>
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <Button className="bg-blue-700 text-white rounded-full">Фторопластовые рукава</Button>
+            <Button variant="outline" className="rounded-full bg-transparent">Металлорукава</Button>
+            <Button variant="outline" className="rounded-full bg-transparent">Сильфонные компенсаторы</Button>
+            <Button variant="outline" className="rounded-full bg-transparent">Трубопроводы ГТУ</Button>
           </div>
         </div>
       </section>
 
-      {/* Email Features Section */}
-      <section className="py-16 px-6">
+      {/* Features Section */}
+      <section id="features" className="py-16 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <Icon name="Shield" size={24} className="text-blue-700" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Письма, которые
+              Качество и надёжность
               <br />
-              отражают вас
+              в каждой поставке
             </h2>
             <div className="space-y-4">
               <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>Добавьте ваш логотип и соцсети</span>
+                <Check className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                <span>Соответствие ГОСТ и техническим регламентам</span>
               </div>
               <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>Напишите собственное благодарственное сообщение</span>
+                <Check className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                <span>Сертификаты качества на всю продукцию</span>
               </div>
               <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>Ваше имя, ваш email отправителя</span>
+                <Check className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                <span>Работа с нестандартными и крупными заказами</span>
               </div>
               <div className="flex items-center">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span>Интеграция с социальными сетями</span>
+                <Check className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                <span>Поставка в короткие сроки по всей России</span>
               </div>
             </div>
           </div>
           <div className="flex justify-center">
             <div className="w-80 h-96 bg-gray-100 rounded-2xl p-4 shadow-lg">
-              <div className="bg-white rounded-xl h-full p-4 flex flex-col">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-xs">9:19</div>
-                  <div className="flex space-x-1">
-                    <div className="w-1 h-1 bg-black rounded-full"></div>
-                    <div className="w-1 h-1 bg-black rounded-full"></div>
-                    <div className="w-1 h-1 bg-black rounded-full"></div>
-                  </div>
-                </div>
-                <div className="text-sm font-medium mb-2">
-                  Ваш проект с Михаилом уже в приложении!
-                </div>
-                <div className="text-xs text-gray-500 mb-4">
-                  21 заметка в списке дел
-                </div>
-                <div className="bg-gray-50 rounded-lg p-3 flex-1">
-                  <div className="text-lg font-bold mb-2">организовано</div>
-                  <div className="text-sm mb-2">
-                    Ваш проект с Михаилом уже в приложении!
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-pink-200 rounded-full"></div>
-                    <div className="text-xs">
-                      Создайте первую заметку и организуйте
+              <div className="bg-white rounded-xl h-full p-6 flex flex-col justify-between">
+                <div>
+                  <div className="text-xs text-gray-400 mb-2">Пример заявки</div>
+                  <div className="text-sm font-bold text-gray-800 mb-1">Фторопластовый рукав</div>
+                  <div className="text-xs text-gray-500 mb-4">DN25 × 1000 мм, давление 25 бар</div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Тип соединения</span>
+                      <span className="font-medium">Ниппель-гайка</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Материал оплётки</span>
+                      <span className="font-medium">Нержавеющая сталь</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Температура</span>
+                      <span className="font-medium">до +200°C</span>
                     </div>
                   </div>
                 </div>
+                <div className="bg-blue-700 text-white text-center text-xs py-2 rounded-lg font-medium">
+                  Запросить цену
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications Section */}
+      <section id="applications" className="py-16 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-sm text-gray-500 mb-4">Применение</p>
+            <h2 className="text-3xl font-bold text-gray-900">Где используется наша продукция</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <div className="w-80 h-96 bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                <div className="h-full flex flex-col justify-between">
+                  <div className="space-y-3">
+                    {[
+                      { icon: "Flame", label: "Газотурбинные установки" },
+                      { icon: "Factory", label: "Нефтегазовые предприятия" },
+                      { icon: "Zap", label: "Энергетические объекты" },
+                      { icon: "Settings", label: "Машиностроительные заводы" },
+                    ].map(({ icon, label }) => (
+                      <div key={label} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Icon name={icon} size={16} className="text-blue-700" />
+                        </div>
+                        <span className="text-sm font-medium text-gray-800">{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-center text-xs text-gray-400">и другие промышленные объекты</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <Icon name="Zap" size={24} className="text-blue-700" />
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Специализация
+                <br />
+                на сложных задачах
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Высокотемпературные и высоконагруженные среды</span>
+                </div>
+                <div className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Агрессивные химические и топливные среды</span>
+                </div>
+                <div className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Компенсация вибраций и термических расширений</span>
+                </div>
+                <div className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Изготовление по чертежам и техническому заданию</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="contacts" className="py-20 px-6 bg-blue-700 text-white text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Нужна поставка? Запросите КП</h2>
+          <p className="text-blue-100 mb-8">
+            Опишите задачу — подберём нужный тип рукава или трубопровода
+            и предоставим коммерческое предложение в короткие сроки.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-white text-blue-700 hover:bg-blue-50 rounded-full px-8 py-3 font-semibold">
+              <Icon name="FileText" size={16} className="mr-2" />
+              Отправить заявку
+            </Button>
+            <Button variant="outline" className="border-white text-white hover:bg-blue-600 rounded-full px-8 py-3 bg-transparent">
+              <Icon name="Phone" size={16} className="mr-2" />
+              Позвонить
+            </Button>
+          </div>
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-8 text-sm text-blue-100">
+            <div className="flex items-center justify-center gap-2">
+              <Icon name="Phone" size={16} />
+              <span>+7 (___) ___-__-__</span>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Icon name="Mail" size={16} />
+              <span>info@npo-volna.ru</span>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Icon name="MapPin" size={16} />
+              <span>Россия</span>
             </div>
           </div>
         </div>
@@ -249,17 +273,16 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-6 border-t">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="text-xl font-bold mb-4 md:mb-0">НотоПлан</div>
+          <div className="flex items-center space-x-2 mb-4 md:mb-0">
+            <div className="w-6 h-6 bg-blue-700 rounded flex items-center justify-center">
+              <span className="text-white font-bold text-xs">В</span>
+            </div>
+            <div className="text-xl font-bold text-gray-900">ООО «НПО "Волна"»</div>
+          </div>
           <div className="flex space-x-6 text-sm text-gray-600">
-            <a href="#" className="hover:text-gray-900">
-              Политика конфиденциальности
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Условия использования
-            </a>
-            <a href="#" className="hover:text-gray-900">
-              Контакты
-            </a>
+            <a href="#" className="hover:text-gray-900">Политика конфиденциальности</a>
+            <a href="#" className="hover:text-gray-900">Реквизиты</a>
+            <a href="#contacts" className="hover:text-gray-900">Контакты</a>
           </div>
         </div>
       </footer>
